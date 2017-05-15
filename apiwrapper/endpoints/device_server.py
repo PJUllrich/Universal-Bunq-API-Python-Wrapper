@@ -29,7 +29,7 @@ class DeviceServer(Endpoint):
             "secret": self.api_client.api_key
         }
         if permitted_ips is not None:
-            payload['permitted_ips'] = permitted_ips
+            payload["permitted_ips"] = permitted_ips
 
         return self._make_post_request(endpoint, payload)
 

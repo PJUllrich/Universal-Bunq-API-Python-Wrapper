@@ -3,7 +3,7 @@ from apiwrapper.endpoints.payment import Payment
 from monetary_account import MonetaryAccount
 
 
-class RequestInquiry(MonetaryAccount, Payment):
+class RequestInquiry(Payment):
     endpoint_request_inquiry = "request-inquiry"
 
     @classmethod

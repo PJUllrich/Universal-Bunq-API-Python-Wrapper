@@ -1,4 +1,4 @@
-from .monetary_account import MonetaryAccount
+from endpoints.monetary_account import MonetaryAccount
 
 
 class ShareInviteBankInquiry(MonetaryAccount):

@@ -1,25 +1,25 @@
-from.annual_overview import AnnualOverview
-from.attachment_public import AttachmentPublic
-from.attachment_tab import AttachmentTab
-from.avatar import Avatar
-from.customer_statement import CustomerStatement
-from.draft_share_invite_bank import DraftShareInviteBank
-from.share_invite_bank_inquiry import ShareInviteBankInquiry
-from.share_invite_bank_response import ShareInviteBankResponse
-from.card import Card
-from.cash_register import CashRegister
-from.certificate_pinned import CertificatePinned
-from.chat_conversation import ChatConversation
-from.draft_payment import DraftPayment
-from.invoice import Invoice
-from.master_card_action import MasterCardAction
-from.monetary_account import MonetaryAccount
-from.payment import Payment
-from.request_inquiry import RequestInquiry
-from.schedule import Schedule
-from.scheduled_payment import ScheduledPayment
-from.tab import Tab
-from.user import User
+from endpoints.annual_overview import AnnualOverview
+from endpoints.attachment_public import AttachmentPublic
+from endpoints.attachment_tab import AttachmentTab
+from endpoints.avatar import Avatar
+from endpoints.customer_statement import CustomerStatement
+from endpoints.draft_share_invite_bank import DraftShareInviteBank
+from endpoints.share_invite_bank_inquiry import ShareInviteBankInquiry
+from endpoints.share_invite_bank_response import ShareInviteBankResponse
+from endpoints.card import Card
+from endpoints.cash_register import CashRegister
+from endpoints.certificate_pinned import CertificatePinned
+from endpoints.chat_conversation import ChatConversation
+from endpoints.draft_payment import DraftPayment
+from endpoints.invoice import Invoice
+from endpoints.master_card_action import MasterCardAction
+from endpoints.monetary_account import MonetaryAccount
+from endpoints.payment import Payment
+from endpoints.request_inquiry import RequestInquiry
+from endpoints.schedule import Schedule
+from endpoints.scheduled_payment import ScheduledPayment
+from endpoints.tab import Tab
+from endpoints.user import User
 
 
 class Controller:

@@ -10,8 +10,8 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 
-from ..config import Controller
-from ..api_client_wo_config import ApiClientWOConfig
+from config import Controller
+from api_client_wo_config import ApiClientWOConfig
 
 config = Controller()
 api_client = ApiClientWOConfig()

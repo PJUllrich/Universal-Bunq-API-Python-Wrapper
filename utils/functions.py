@@ -1,5 +1,5 @@
 """
-DISCLAIMER: This code was mostly taken from the example files in: 
+DISCLAIMER: This code was mostly taken from the example files in:
 
 https://github.com/madeddie/python-bunq
 
@@ -11,15 +11,15 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 
 from config import Controller
-from api_client import ApiClient
+from api_client_wo_config import ApiClientWOConfig
 
 config = Controller()
-api_client = ApiClient()
+api_client = ApiClientWOConfig()
 
 
 def create_new_key_pair():
     """Creates a new public/private key pair and saves them to the config file
-    
+
     :return: Prints out a success message
     """
     private_key = rsa.generate_private_key(
@@ -48,11 +48,11 @@ def create_new_key_pair():
 def register_key_pair():
     """Registers a public/private key pair with the Bunq API
     Ref: https://doc.bunq.com/api/1/call/installation/method/post
-    
+
     Saves the installation (user) token and server public key to config
-    
+
     KEY_PRIVATE needs to be set in the config for this method to run
-    
+
     :return: Prints out either a success message or the Error message of the API
     """
     payload = {'client_public_key': api_client.pubkey}
@@ -74,11 +74,11 @@ def register_key_pair():
 
 
 def create_new_device_server():
-    """Creates a new device server at the Bunq API 
+    """Creates a new device server at the Bunq API
     Ref: https://doc.bunq.com/api/1/call/device-server/method/post
-    
+
     API_KEY needs to be set in the config for this method to run
-    
+
     :return: Prints out either a success message or the Error message of the API
     """
     payload = {'description': 'Castle', 'secret': api_client.api_key}
@@ -93,11 +93,11 @@ def create_new_device_server():
 def create_new_session():
     """Creates a new session at the Bunq API
     Ref: https://doc.bunq.com/api/1/call/session-server/method/post
-    
+
     Saves the session token to config
-    
+
     API_KEY needs to be set in the config for this method to run
-    
+
     :return: Prints out either a success message or the Error message of the API
     """
 
@@ -115,7 +115,7 @@ def create_new_session():
 def get_user_id():
     """Retrieves the id of the first user of an accounts from the Bunq API
     Saves the id to config
-    
+
     :return: Prints out either a success message or the Error message of the API
     """
     r = api_client.get('user')

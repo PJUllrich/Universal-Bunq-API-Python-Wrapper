@@ -37,6 +37,9 @@ class ApiClientWOConfig(ApiClient):
 
     @property
     def privkey(self):
+        if not isinstance(self.__privkey_pem, bytes):
+            self.__privkey_pem = self.__privkey_pem.encode()
+        print(type(self.__privkey_pem))
         return serialization.load_pem_private_key(
             self.__privkey_pem,
             password=None,

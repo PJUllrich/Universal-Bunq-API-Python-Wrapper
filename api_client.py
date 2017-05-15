@@ -15,9 +15,9 @@ from .config import Controller
 class ApiClient:
 
     __version_api = 1
-    __version = '0.0.1'
-    # __uri = f"https://api.bunq.com/v{__version_api}"
-    __uri = "https://sandbox.public.api.bunq.com/v{__version_api}"
+    __version = '0.1.0'
+    # __uri = "https://api.bunq.com/v%d" % __version_api
+    __uri = "https://sandbox.public.api.bunq.com/v%d" % __version_api
 
     def __init__(self):
         self.config = Controller()
@@ -36,7 +36,7 @@ class ApiClient:
     def request(self, method, endpoint, payload=None):
         headers = self.create_headers(method, endpoint, payload)
 
-        url = '%s/%s' % (self.__uri, endpoint)
+        url = '%s%s' % (self.__uri, endpoint)
 
         return requests.request(method, url, headers=headers, json=payload)
 

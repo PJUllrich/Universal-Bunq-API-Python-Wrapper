@@ -1,4 +1,4 @@
-from endpoints.endpoint import Endpoint
+from .endpoint import Endpoint
 
 
 class User(Endpoint):
@@ -28,4 +28,3 @@ class User(Endpoint):
         endpoint = "%s/%d" % (self.endpoint_user_company, user_id)
 
         return self._make_get_request(endpoint)
-

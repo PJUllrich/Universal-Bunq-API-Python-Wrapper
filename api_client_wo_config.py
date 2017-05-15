@@ -1,16 +1,17 @@
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 
-from api_client import ApiClient
+from .api_client import ApiClient
 
 
 class ApiClientWOConfig(ApiClient):
 
-    def __init__(self, privkey_pem, token='', servkey_pem=''):
+    def __init__(self, privkey_pem='', token='', servkey_pem='', API_key=''):
         super().__init__()
         self.__privkey_pem = privkey_pem
         self.__token = token
         self.__servkey_pem = servkey_pem
+        self.__api_key = API_key
 
     @property
     def user_token(self):
@@ -48,7 +49,7 @@ class ApiClientWOConfig(ApiClient):
 
     @property
     def api_key(self):
-        return None
+        return self.__api_key
 
     @property
     def server_pubkey(self):

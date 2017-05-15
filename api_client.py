@@ -9,7 +9,7 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import padding
 
-from config import Controller
+from .config import Controller
 
 
 class ApiClient:
@@ -17,7 +17,7 @@ class ApiClient:
     __version_api = 1
     __version = '0.0.1'
     # __uri = f"https://api.bunq.com/v{__version_api}"
-    __uri = f"https://sandbox.public.api.bunq.com/v{__version_api}"
+    __uri = "https://sandbox.public.api.bunq.com/v{__version_api}"
 
     def __init__(self):
         self.config = Controller()

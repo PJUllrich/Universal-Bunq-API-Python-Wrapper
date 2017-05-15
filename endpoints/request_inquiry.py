@@ -1,5 +1,5 @@
-from endpoints.endpoint import Endpoint
-from endpoints.monetary_account import MonetaryAccount
+from .endpoint import Endpoint
+from .monetary_account import MonetaryAccount
 
 
 class RequestInquiry(MonetaryAccount):

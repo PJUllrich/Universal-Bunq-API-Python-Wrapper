@@ -1,4 +1,4 @@
-from endpoints.endpoint import Endpoint
+from .endpoint import Endpoint
 
 
 class Avatar(Endpoint):

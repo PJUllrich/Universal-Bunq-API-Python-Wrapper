@@ -1,4 +1,4 @@
-from endpoints.monetary_account import MonetaryAccount
+from .monetary_account import MonetaryAccount
 
 
 class DraftPayment(MonetaryAccount):

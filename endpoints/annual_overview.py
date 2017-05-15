@@ -1,4 +1,4 @@
-from endpoints.user import User
+from .user import User
 
 
 class AnnualOverview(User):

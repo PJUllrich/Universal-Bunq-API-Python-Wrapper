@@ -1,4 +1,4 @@
-from monetary_account import MonetaryAccount
+from apiwrapper.endpoints.monetary_account import MonetaryAccount
 
 
 class Schedule(MonetaryAccount):
@@ -20,17 +20,17 @@ class Schedule(MonetaryAccount):
 
         return self._make_get_request(endpoint)
 
+    def get_schedule_by_id(self, user_id, account_id, schedule_id):
+        endpoint = self.get_base_endpoint(user_id, account_id, schedule_id)
+
+        return self._make_get_request(endpoint)
+
     def get_all_schedules_for_user(self, user_id):
         endpoint = "/%s/%d/%s" % (
             self.endpoint_user,
             user_id,
             self.endpoint_schedule
         )
-        return self._make_get_request(endpoint)
-
-    def get_schedule_by_id(self, user_id, account_id, schedule_id):
-        endpoint = self.get_base_endpoint(user_id, account_id, schedule_id)
-
         return self._make_get_request(endpoint)
 
     # Schedule Instance Logic

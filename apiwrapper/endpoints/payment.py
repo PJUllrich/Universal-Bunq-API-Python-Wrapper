@@ -1,4 +1,4 @@
-from monetary_account import MonetaryAccount
+from apiwrapper.endpoints.monetary_account import MonetaryAccount
 
 
 class Payment(MonetaryAccount):
@@ -9,9 +9,7 @@ class Payment(MonetaryAccount):
 
     @classmethod
     def get_base_endpoint(cls, user_id, account_id):
-        endpoint = MonetaryAccount.get_base_endpoint(user_id)
-        endpoint += "/%d" % account_id
-        return endpoint
+        return MonetaryAccount.get_base_endpoint(user_id, account_id)
 
     # Payment Logic
     def get_all_payments_for_account(self, user_id, account_id):

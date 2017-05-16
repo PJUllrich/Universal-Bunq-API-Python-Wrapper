@@ -1,4 +1,4 @@
-from user import User
+from apiwrapper.endpoints.user import User
 
 
 class ChatConversation(User):

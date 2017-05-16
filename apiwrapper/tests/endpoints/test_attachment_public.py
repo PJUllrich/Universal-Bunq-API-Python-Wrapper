@@ -1,7 +1,7 @@
 import unittest
 
-from attachment_public import AttachmentPublic
-from .test_endpoint import EndpointTest
+from apiwrapper.endpoints.attachment_public import AttachmentPublic
+from apiwrapper.tests.endpoints.test_endpoint import EndpointTest
 
 
 class AttachmentPublicTest(EndpointTest, unittest.TestCase):

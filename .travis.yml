@@ -1,0 +1,12 @@
+language: python
+python:
+  - 3.6
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls
+# command to run tests
+script:
+  coverage run --source=apiwrapper --omit=virtualenv/* test.py
+after_success:
+  coveralls

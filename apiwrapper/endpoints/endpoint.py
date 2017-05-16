@@ -1,6 +1,9 @@
 
 
 class Endpoint:
+    """Base class for endpoints
+    Implements generic functions to make HTTP requests
+    """
 
     endpoint_chat = "chat"
 

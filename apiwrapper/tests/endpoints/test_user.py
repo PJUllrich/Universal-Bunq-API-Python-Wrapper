@@ -1,7 +1,7 @@
 import unittest
 
-from user import User
-from .test_endpoint import EndpointTest
+from apiwrapper.endpoints.user import User
+from apiwrapper.tests.endpoints.test_endpoint import EndpointTest
 
 
 class UserTest(EndpointTest, unittest.TestCase):

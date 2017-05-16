@@ -1,4 +1,4 @@
-from endpoint import Endpoint
+from apiwrapper.endpoints.endpoint import Endpoint
 
 
 class SessionServer(Endpoint):

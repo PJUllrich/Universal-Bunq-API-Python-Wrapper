@@ -1,6 +1,6 @@
 from apiwrapper.endpoints.payment import Payment
 
-from monetary_account import MonetaryAccount
+from apiwrapper.endpoints.monetary_account import MonetaryAccount
 
 
 class RequestInquiry(Payment):

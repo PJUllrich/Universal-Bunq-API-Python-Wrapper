@@ -13,7 +13,7 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 from apiwrapper.endpoints.endpointcontroller import EndpointController
 
-from apiwrapper.clients.api_client_not_persisting import ApiClientNonPersisting
+from apiwrapper.clients.api_client_non_persisting import ApiClientNonPersisting
 
 
 class Setup:
@@ -74,14 +74,14 @@ class Setup:
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         ).decode()
 
-        print('New key pair was created!.')
+        print('New key pair was created')
 
         if save_to_config:
             self.config.set('key_private', private_key_decoded)
             self.config.set('key_public', public_key_decoded)
         else:
-            print("New Private Key: %s" % private_key_decoded)
-            print("New Public Key:  %s" % public_key_decoded)
+            print('\tNew Private Key: %s' % private_key_decoded)
+            print('\tNew Public Key:  %s' % public_key_decoded)
 
         return private_key_decoded, public_key_decoded
 
@@ -98,10 +98,11 @@ class Setup:
         """
 
         r = self.endpoints.installation.create_installation()
-        if r.status_code == 200:
-            token_entry = [x for x in r.json()['Response'] if
-                           list(x)[0] == 'Token'][0]
-            server_entry = [x for x in r.json()['Response'] if
+        try:
+            res = r['Response']
+
+            token_entry = [x for x in res if list(x)[0] == 'Token'][0]
+            server_entry = [x for x in res if
                             list(x)[0] == 'ServerPublicKey'][0]
 
             installation_token = token_entry['Token']['token']
@@ -111,13 +112,13 @@ class Setup:
             self.api_client.installation_token = installation_token
             self.api_client.server_pubkey = server_public_key
 
-            print('Key pair was registered successfully.')
-            print("Installation Token: %s" % installation_token)
-            print("Server Public Key: %s" % server_public_key)
+            print('Key pair was registered successfully')
+            print('\tInstallation Token: %s' % installation_token)
+            print('\tServer Public Key: %s' % server_public_key)
 
             return True
-        else:
-            print('Register Key Pair Error: ' + str(r.json()['Error'][0]))
+        except KeyError:
+            print('Register Key Pair Error: ' + str(r['Error'][0]))
 
             return False
 
@@ -132,11 +133,13 @@ class Setup:
         r = self.endpoints.device_server.create_new_device_server(
             description="New Device")
 
-        if r.status_code == 200:
+        try:
+            res = r['Response']
+
             print('New device server was created successfully.')
             return True
-        else:
-            print('New Device Server Error: ' + str(r.json()['Error'][0]))
+        except KeyError:
+            print('New Device Server Error: ' + str(r['Error'][0]))
             return False
 
     def create_new_session(self):
@@ -153,15 +156,17 @@ class Setup:
 
         r = self.endpoints.session_server.create_new_session_server()
 
-        if r.status_code == 200:
-            res = [x for x in r.json()['Response'] if list(x)[0] == 'Token'][0]
+        try:
+            res = r["Response"]
+
+            res = [x for x in res if list(x)[0] == 'Token'][0]
             session_token = res['Token']['token']
 
             self.api_client.session_token = session_token
 
             print('New session was created successfully.')
-            print("New Session Token: %s" % session_token)
+            print('\tNew Session Token: %s' % session_token)
             return True
-        else:
-            print('Create Session Error: ' + str(r.json()['Error'][0]))
+        except KeyError:
+            print('Create Session Error: ' + str(r['Error'][0]))
             return False

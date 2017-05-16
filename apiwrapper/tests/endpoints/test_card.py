@@ -1,7 +1,7 @@
 import unittest
 
+from apiwrapper.endpoints.card import Card
 from apiwrapper.tests.endpoints.test_endpoint import EndpointTest
-from card import Card
 
 
 class CardTest(EndpointTest, unittest.TestCase):

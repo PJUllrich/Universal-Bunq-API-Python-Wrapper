@@ -3,8 +3,8 @@ import unittest
 
 from faker import Faker
 
+from apiwrapper.endpoints.device_server import DeviceServer
 from apiwrapper.tests.endpoints.test_endpoint import EndpointTest
-from device_server import DeviceServer
 
 
 class DeviceServerTest(EndpointTest, unittest.TestCase):

@@ -16,6 +16,7 @@ from apiwrapper.endpoints.master_card_action import MasterCardAction
 from apiwrapper.endpoints.monetary_account import MonetaryAccount
 from apiwrapper.endpoints.payment import Payment
 from apiwrapper.endpoints.request_inquiry import RequestInquiry
+from apiwrapper.endpoints.schedule import Schedule
 from apiwrapper.endpoints.scheduled_payment import ScheduledPayment
 from apiwrapper.endpoints.session_server import SessionServer
 from apiwrapper.endpoints.share_invite_bank_inquiry import \
@@ -25,7 +26,6 @@ from apiwrapper.endpoints.share_invite_bank_response import \
 from apiwrapper.endpoints.tab import Tab
 from apiwrapper.endpoints.user import User
 
-from schedule import Schedule
 
 
 class EndpointController:

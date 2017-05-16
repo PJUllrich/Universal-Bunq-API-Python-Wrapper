@@ -1,7 +1,7 @@
 import unittest
 
+from apiwrapper.endpoints.monetary_account import MonetaryAccount
 from apiwrapper.tests.endpoints.test_endpoint import EndpointTest
-from monetary_account import MonetaryAccount
 
 
 class MonetaryAccountTest(EndpointTest, unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 
-from annual_overview import AnnualOverview
+from apiwrapper.endpoints.annual_overview import AnnualOverview
 from apiwrapper.tests.endpoints.test_endpoint import EndpointTest
 
 

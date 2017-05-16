@@ -64,5 +64,4 @@ class ApiClientNonPersisting(ApiClient):
 
     @api_key.setter
     def api_key(self, value):
-        print(value)
         self.__api_key = value

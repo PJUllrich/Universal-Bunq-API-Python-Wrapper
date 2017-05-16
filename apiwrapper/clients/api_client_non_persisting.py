@@ -62,4 +62,7 @@ class ApiClientNonPersisting(ApiClient):
     def server_pubkey(self, value):
         self.__server_pubkey = value
 
-
+    @api_key.setter
+    def api_key(self, value):
+        print(value)
+        self.__api_key = value

@@ -13,3 +13,6 @@ class Endpoint:
 
     def _make_post_request(self, endpoint, payload):
         return self._api_client.post(endpoint, payload)
+
+    def _make_delete_request(self, endpoint):
+        return self._api_client.delete(endpoint)
